@@ -48,7 +48,7 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var lastPinchScale: CGFloat = 1
     
-    func handlePinch(sender: UIPinchGestureRecognizer) {
+    @objc func handlePinch(sender: UIPinchGestureRecognizer) {
         
         let pinchScale = sender.scale
         

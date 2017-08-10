@@ -127,16 +127,16 @@ class StringsView: UIView {
         
         let font = UIFont.systemFont(ofSize: 16)
         
-        let attributes: [String : Any] = [
+        let attributes: [NSAttributedStringKey : Any] = [
             
-            NSFontAttributeName: font,
-            NSBaselineOffsetAttributeName: 1.0,
-            NSForegroundColorAttributeName: color
+            NSAttributedStringKey.font: font,
+            NSAttributedStringKey.baselineOffset: 1.0,
+            NSAttributedStringKey.foregroundColor: color
         ]
         
         let nsstring = string as NSString
         
-        let size = nsstring.size(attributes: attributes)
+        let size = nsstring.size(withAttributes: attributes)
         
         let rect = CGRect(x: x - 0.5 * size.width, y: y - 0.5 * size.height, width: size.width, height: size.height)
         
@@ -156,16 +156,16 @@ class StringsView: UIView {
         
         /*
         switch style {
-        
+         
         case .Root:
             break
-            
+         
         case .Primary:
             usedRadius *= 0.9
-            
+         
         case .Secondary:
             usedRadius *= 0.7
-            
+         
         case .None:
             usedRadius *= 0.0
         }
@@ -207,30 +207,30 @@ class StringsView: UIView {
         var g = CGFloat(1.0)
         var b = CGFloat(0.0)
         var a = CGFloat(1.0)
-        
+         
         switch style {
-            
+         
         case .Root:
             r = 1.0
             g = 1.0
             b = 1.0
-            
+         
         case .Primary:
             r = 0.0
             g = 1.0
             b = 0.0
             a = 1.0
-            
+         
         case .Secondary:
             r = 0.0
             g = 0.6
             b = 0.0
             a = 1.0
-            
+         
         case .None:
             a = 0.0
         }
-        
+         
         return UIColor(red: r, green: g, blue: b, alpha: a)
         */
     }
@@ -347,7 +347,7 @@ class StringsView: UIView {
         }
         
         outer: for octave in -1 ..< octaveCount {
-
+            
             for pattern in patterns {
                 
                 let startingFret = rootFretOffset + (12 * octave) + pattern.fretOffset
@@ -369,7 +369,7 @@ class StringsView: UIView {
                 let y = CGFloat(15.0) //CGFloat(20.0 + Float(alt) * 5.0)
                 //alt *= -1
                 
-                let rect = CGRect(x: from, y: y, width: to - from, height: 20.0)
+                //let rect = CGRect(x: from, y: y, width: to - from, height: 20.0)
                 
                 //self.drawUpperCurve(rect, angle: 90.0)
                 
