@@ -18,10 +18,7 @@ class StringsTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testModels() {
         
         let x: ChromaticNote = 7
         print(x)
@@ -52,14 +49,4 @@ class StringsTests: XCTestCase {
         
         XCTAssert(1 == 1)
     }
-    
-    func testPerformanceExample() {
-        
-        // This is an example of a performance test case.
-        
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
